@@ -194,17 +194,29 @@ body {
     padding-top: calc(var(--nice-padding) + 2rem);
     display: flex;
     width: 100%;
-    align-self: center;
+    min-height: 100vh;
+
     flex-direction: column;
     align-items: center;
-    align-content: center;
     justify-content: center;
 
-    background: rgba(0, 0, 0, .5) url('https://github.com/jaxxo11/DepthSMPWeb/blob/main/media/bg.png?raw=true');
-    background-blend-mode: darken;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    position: relative;
+
+    background: url("https://github.com/jaxxo11/DepthSMPWeb/blob/main/media/bg.png?raw=true")
+        center/cover no-repeat;
+}
+
+.main1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.main1 > * {
+    position: relative;
+    z-index: 2;
 }
 
 .main1_logo_a {
